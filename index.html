@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html lang="en-US">
+<meta charset="utf-8"> <!-- unicode character set -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial scale=1.0">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+<meta name="description" content="Web-App Prototype">
+<meta name="author" content="kashif">
+
+<!-- Bootstrap Core CSS -->
+<!-- <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+
+<link rel="stylesheet" href="css/master.css">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
 <body>
 
-<div ng-app="">
- 	<p>Name : <input type="text" ng-model="name"></p>
- 	<h1>Hello {{name}}</h1>
+<div class="container">
+
+    <div ng-app="">
+     	<!-- <p>Name : <input type="text" ng-model="name"></p>
+     	<h1>Hello {{name}}</h1> -->
+        <button type="button" name="button" class="main-btn">
+            Simply<span id="play" style="color: red"><i>Play!</i></span>Cast
+            <br><span class="level">Level</span>
+        </button>
+
+    </div>
+
 </div>
+
 
 </body>
 </html>
