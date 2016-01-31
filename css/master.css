@@ -1,0 +1,22 @@
+.main-btn {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-bottom: 60px;
+    border-radius: 20px;
+    background-color: #475569;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    color: #FFF;
+}
+
+#play {
+}
+
+.level {
+    text-align: left;
+    margin-left: -90px;
+    font-size: 15px;
+}
