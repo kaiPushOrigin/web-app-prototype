@@ -12,11 +12,25 @@
     color: #FFF;
 }
 
-#play {
+.modal-body {
+    font-style: 'Open Sans',helvetica,verdana,arial,sans-serif;
+    font-size: 16px;
+    text-align: center;
 }
 
-.level {
+#welcome-btn {
+    width: 20%;
+}
+
+.next {
+    float: right;
+}
+
+.previous {
+    float: left;
+}
+/*.level {
     text-align: left;
     margin-left: -90px;
     font-size: 15px;
-}
+}*/
