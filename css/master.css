@@ -29,6 +29,11 @@
 .previous {
     float: left;
 }
+
+#activeList {
+    color: white;
+    background-color: black;
+}
 /*.level {
     text-align: left;
     margin-left: -90px;
