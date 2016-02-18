@@ -79,6 +79,25 @@
     width: 55%;
 }
 
+.right-button {
+    padding-left: -10px;
+}
+
+.active-button {
+    color: #fff;
+    background-color: #337ab7;
+}
+.active-button:hover {
+    color: #fff;
+    background-color: #5cb85c;
+}
+
+.contacts-green {
+    background-color: #5cb85c;
+    color: white !important;
+}
+
+
 /*.level {
     text-align: left;
     margin-left: -90px;

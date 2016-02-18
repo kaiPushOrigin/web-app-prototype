@@ -29,7 +29,7 @@
 
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
-		<script src="js/dashboard.js"></script>
+		<script src="js/contacts.js"></script>
 
 		<!-- Angular UI Bootstrap -->
 		<!-- <script src="angular/js/app.js"></script>
@@ -88,7 +88,7 @@
 	                <div class="sidebar">
 	                    <ul class="list-group">
 	                        <li class="list-group-item"><a href="#"> Dashboard</a></li>
-	                        <li class="list-group-item" id="contacts"><a href="contacts.html"> Contacts</a></li>
+	                        <li class="list-group-item" id="contacts"><a href="#"> Contacts</a></li>
 	                        <li class="list-group-item"><a href="#"> Leads</a></li>
 	                        <li class="list-group-item"><a href="#"> Lists</a></li>
 	                        <li class="list-group-item"><a href="#"> Tasks</a></li>
@@ -139,54 +139,7 @@
 		    </div> <!-- row -->
 		</div> <!--container-fluid -->
 
-		<!-- <p align="center">
-			<a class="btn btn-sm btn-info" href="#modal-1" data-toggle="modal" data-dismiss="modal">
-				<span class="glyphicon glyphicon glyphicon-download" area-hidden="true">Previous</span>
-			</a>
-		</p> -->
-		<div class="content-center">
-			<div class="panel panel-default">
-  				<div class="panel-heading">
-    				<h3 class="panel-title">List</h3>
-  				</div>
-  				<div class="panel-body">
-					<div class="btn-group" role="group" aria-label="...">
-						<button type="button" class="btn btn-default active-button" href="#modal-new-list" data-toggle="modal">
-							<span class="glyphicon glyphicon glyphicon-plus" area-hidden="true"> New
-							</span>
-						</button>
-						<button type="button" class="btn btn-default">
-							<span class="glyphicon glyphicon glyphicon-download" area-hidden="true"> Upload
-							</span>
-						</button>
-					</div>
-  				</div>
-			</div>
-		</div>
-
-		<div class="modal fade" id="modal-new-list">
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title">New List</h4>
-                    </div>
-                    <div class="modal-body">
-						<div class="form-group">
-							<label for="list">Enter new list name:</label>
-							<input type="text" name="list-name" id="list-name" class="form-control"><br>
-						</div>
-                    </div>
-					<div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                        <button onclick="getList()" type="button" class="btn btn-primary"
-						href="#modal-add-contacts" data-toggle="modal" data-dismiss="modal">Create</button>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-
-		<div class="modal fade" id="modal-add-contacts">
+		<div class="modal fade" id="modal-contacts-entry">
             <div class="modal-dialog modal-sm">
                 <div class="modal-content">
                     <!-- <div class="modal-header">
@@ -195,7 +148,7 @@
                     </div> -->
                     <div class="modal-body">
 						<p>
-							Now add contacts to the list <br>
+							Now add the following contact <br>
 							<div id="contact-list-name">
 							</div>
 						</p>
@@ -211,6 +164,7 @@
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
+
 
 	</body>
 </html>
