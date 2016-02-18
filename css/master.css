@@ -97,7 +97,17 @@
     color: white !important;
 }
 
+.contact-info > .label{
+    font-size: 15px;
+}
 
+table {
+    text-align: left;
+}
+
+.table-value {
+    padding-left: 20px;
+}
 /*.level {
     text-align: left;
     margin-left: -90px;
