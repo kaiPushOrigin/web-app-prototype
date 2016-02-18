@@ -73,6 +73,11 @@
     text-align: center;
 }
 
+.content-center {
+    margin-top: 50px;
+    margin-left: 250px;
+    width: 55%;
+}
 
 /*.level {
     text-align: left;
