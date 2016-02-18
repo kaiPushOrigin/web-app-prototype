@@ -46,13 +46,31 @@
 
 .sidebar-right {
   float: right;
-  width: 220px;
+  width: 300px;
 }
 
 .sidebar-brand {
     height: 65px;
     font-size: 18px;
     line-height: 50px;
+}
+
+.subList {
+    padding-left: 50px;
+    padding-right: 20px;
+}
+
+.parentList {
+    background-color: #F2F1EF;
+    padding-right: 10px;
+}
+
+.list-group-item.active {
+    padding-left: 33px;
+}
+
+.sidebar-brand {
+    text-align: center;
 }
 
 
