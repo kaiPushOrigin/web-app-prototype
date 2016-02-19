@@ -29,7 +29,6 @@
 
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
-		<script src="js/contacts.js"></script>
 		<script src="js/dashboard.js"></script>
 
 		<!-- Angular UI Bootstrap -->
@@ -37,6 +36,29 @@
 		<script src="angular/js/controllers.js"></script>
 		<script src="js/ui-bootstrap-tpls-1.1.1.min.js"></script> -->
 		<title>SimplyPlayCast!</title>
+		<script>
+		$(window).load(function() {
+			console.log("hi");
+			getListName();
+		});
+		function getListName() {
+			document.getElementById("listID").innerHTML = localStorage.getItem("list.listName");
+			console.log(localStorage.getItem(list.listName));
+		}
+		// if (typeof(Storage) !== "undefined") {
+		// 	// Store
+		// 	// Retrieve
+		// 	console.log(localStorage.getItem("listName"));
+		// 	// document.getElementById("listID").innerHTML = localStorage.listID;
+		// 	document.getElementById("listName").innerHTML = "Hello";
+		// 	// document.getElementById("listContacts").innerHTML = localStorage.listContacts;
+		//
+		// } else {
+		// 	document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+		// }
+		// // console.log(localStorage.lastName);
+
+		</script>
 	</head>
 	<body>
 
@@ -89,7 +111,7 @@
 	                <div class="sidebar">
 	                    <ul class="list-group">
 	                        <li class="list-group-item"><a href="#"> Dashboard</a></li>
-	                        <li class="list-group-item" id="contacts"><a href="#"> Contacts</a></li>
+	                        <li class="list-group-item" id="contacts"><a href="contacts.html"> Contacts</a></li>
 	                        <li class="list-group-item"><a href="#"> Leads</a></li>
 	                        <li class="list-group-item"><a href="#"> Lists</a></li>
 	                        <li class="list-group-item"><a href="#"> Tasks</a></li>
@@ -140,113 +162,85 @@
 		    </div> <!-- row -->
 		</div> <!--container-fluid -->
 
-		<div class="modal fade" id="modal-contacts-entry">
+		<!-- <p align="center">
+			<a class="btn btn-sm btn-info" href="#modal-1" data-toggle="modal" data-dismiss="modal">
+				<span class="glyphicon glyphicon glyphicon-download" area-hidden="true">Previous</span>
+			</a>
+		</p> -->
+		<div class="content-center">
+			<div class="panel panel-default">
+  				<div class="panel-heading">
+    				<h3 class="panel-title">List</h3>
+  				</div>
+  				<div class="panel-body">
+					<div class="btn-group" role="group" aria-label="...">
+						<button type="button" class="btn btn-default active-button" href="#modal-new-list" data-toggle="modal">
+							<span class="glyphicon glyphicon glyphicon-plus" area-hidden="true"> New
+							</span>
+						</button>
+						<button type="button" class="btn btn-default">
+							<span class="glyphicon glyphicon glyphicon-download" area-hidden="true"> Upload
+							</span>
+						</button><br>
+					</div>
+					<table class="table table-bordered">
+					    <thead>
+					      <tr>
+					        <th></th>
+					        <th>ID</th>
+					        <th>Name</th>
+							<th>Contacts</th>
+					      </tr>
+					    </thead>
+					    <tbody>
+					      <tr>
+					        <td><input type="checkbox" value=""></td>
+					        <td id="listID"></td>
+					        <td id="listName"></td>
+							<td id="listContacts"></td>
+					      </tr>
+					      <!-- <tr>
+					        <td><input type="checkbox" value=""></td>
+					        <td>Moe</td>
+					        <td>mary@example.com</td>
+							<td>john@example.com</td>
+					      </tr>
+					      <tr>
+					        <td><input type="checkbox" value=""></td>
+					        <td>Dooley</td>
+					        <td>july@example.com</td>
+							<td>john@example.com</td>
+					      </tr> -->
+					    </tbody>
+					  </table>
+  				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="modal-new-list">
             <div class="modal-dialog modal-sm">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title">Now add the following contact </h4>
+                        <h4 class="modal-title">New List</h4>
                     </div>
                     <div class="modal-body">
-						<p align="left" class="contact-info">
-							<table>
-								<tr>
-									<td><em>Name: </em></td>
-									<td class="table-value">Josh Redman</td>
-								</tr>
-								<tr>
-									<td><em>Company: </em></td>
-									<td class="table-value">ABC Insurance</td>
-								</tr>
-								<tr>
-									<td><em>Title: </em></td>
-									<td class="table-value">CEO</td>
-								</tr>
-								<tr>
-									<td><em>Address: </em></td>
-									<td class="table-value">1230 12th Street</td>
-								</tr>
-								<tr>
-									<td><em>City/State: </em></td>
-									<td class="table-value">Philadelphia, PA</td>
-								</tr>
-								<tr>
-									<td><em>Zip: </em></td>
-									<td class="table-value">195016</td>
-								</tr>
-							</table>
-							 <!-- <span class="label label-success">Name:</span> Josh Redman<br><br>
-							 <span class="label label-success">Company:</span> ABC Insurance<br><br>
-							 <span class="label label-success">Title:</span> CEO<br><br>
-							 <span class="label label-success">Address:</span> 1230 12th Street<br><br>
-							 <span class="label label-success">City/State:</span> Philadelphia, PA<br><br>
-							 <span class="label label-success">Zip:</span> 195016<br><br> -->
-							<div id="contact-list-name">
-							</div>
-						</p>
-						<!-- <div class="form-group">
+						<div class="form-group">
 							<label for="list">Enter new list name:</label>
-							<input type="text" name="list-name" class="form-control"><br>
-						</div> -->
+							<input type="text" name="list-name" id="list-name" class="form-control"><br>
+						</div>
                     </div>
 					<div class="modal-footer">
-                        <a class="btn btn-default" href="#modal-new-list" data-toggle="modal" data-dismiss="modal">Back</a>
-                        <a type="button" href="#modal-list-contacts" data-toggle="modal" class="btn btn-primary ok" data-dismiss="modal">OK</a>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button onclick="getList()" type="button" class="btn btn-primary"
+						href="#modal-add-contacts" data-toggle="modal" data-dismiss="modal">Create</button>
                     </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
 
-		<div class="modal fade" id="modal-list-contacts">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <!-- <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title">New List</h4>
-                    </div> -->
-                    <div class="modal-body-user">
-						<table>
-							<tr>
-								<td rowspan="6">
-									<span class="glyphicon glyphicon-user user-info-pic"></span>
-								</td>
-								<td>Josh Redman</td>
-							</tr>
-							<tr>
-								<td>ABC Insurance</td>
-							</tr>
-							<tr>
-								<td>CEO</td>
-							</tr>
-							<tr>
-								<td>1230 12th Street</td>
-							</tr>
-							<tr>
-								<td>Philadelphia, PA</td>
-							</tr>
-							<tr>
-								<td>195016</td>
-							</tr>
-						</table>
-						<!-- <span class="glyphicon glyphicon-user user-info-pic"></span>
-						<p class="user-info">
-							sdsdsd <br>
-							sdsdsd <br>
-							sdsdsd <br>
-							sdsdsd <br>
-						</p> -->
-						<!-- <div class="form-group">
-							<label for="list">Enter new list name:</label>
-							<input type="text" name="list-name" class="form-control"><br>
-						</div> -->
-                    </div>
-					<div class="modal-footer">
-                        <a class="btn btn-default" href="#modal-new-list" data-toggle="modal" data-dismiss="modal">Back</a>
-                        <a type="button" onlclick="getListName()" href="new-list.html" class="btn btn-primary ok">OK</a>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
+
+
 
 
 
