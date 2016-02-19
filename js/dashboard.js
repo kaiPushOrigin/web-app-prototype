@@ -30,9 +30,7 @@ function getList() {
 			listContacts: "..."
 		};
 		localStorage.setItem("list", JSON.stringify(listInfo));
-		var getList = localStorage.getItem("list");
-		var contactList = JSON.parse(getList);
-		console.log(contactList.listName);
+
 		// console.log(localStorage.getItem(JSON.parse("list.listName")));
 		// localStorage.setItem("listName", listName);
 		// localStorage.setItem("listName", listName);

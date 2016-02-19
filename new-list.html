@@ -42,8 +42,13 @@
 			getListName();
 		});
 		function getListName() {
-			document.getElementById("listID").innerHTML = localStorage.getItem("list.listName");
-			console.log(localStorage.getItem(list.listName));
+			var getList = localStorage.getItem("list");
+			var contactList = JSON.parse(getList);
+			console.log(contactList.listName);
+
+			document.getElementById("listID").innerHTML = contactList.listID;
+			document.getElementById("listName").innerHTML = contactList.listName;
+			document.getElementById("listContacts").innerHTML = contactList.listContacts;
 		}
 		// if (typeof(Storage) !== "undefined") {
 		// 	// Store
