@@ -154,6 +154,17 @@ table {
     color: #FFF !important;
 }
 
+.btn-sq {
+  width: 120px !important;
+  height: 60px !important;
+  font-size: 15px;
+
+}
+
+.btn-sq.btn-caption {
+    padding-top: 15px;
+}
+
 /*.level {
     text-align: left;
     margin-left: -90px;

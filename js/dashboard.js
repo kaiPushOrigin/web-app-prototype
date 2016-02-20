@@ -1,5 +1,6 @@
 $(window).load(function() {
 	$('#myModal').modal('show');
+	$('#modal-congratulations').modal('show');
 });
 
 $(document).ready(function(){

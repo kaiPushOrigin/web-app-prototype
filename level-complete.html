@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"> <!-- unicode character set -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial scale=1.0">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+		<meta name="description" content="Web-App Prototype">
+		<meta name="author" content="kashif">
+
+		<!-- Bootstrap Core CSS -->
+		<!-- <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+
+		<!-- Latest jQuery -->
+		<script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+		<!-- Google Fonts -->
+		<link rel="stylesheet" href="css/master.css">
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
+		<script src="js/contacts.js"></script>
+		<script src="js/dashboard.js"></script>
+
+		<script>
+		$(window).load(function() {
+			console.log("hi");
+			getListName();
+		});
+		function getListName() {
+			var getList = localStorage.getItem("list");
+			var contactList = JSON.parse(getList);
+			console.log(contactList.listName);
+			document.getElementById("listName").innerHTML = contactList.listName;
+		}
+		</script>
+
+		<!-- Angular UI Bootstrap -->
+		<!-- <script src="angular/js/app.js"></script>
+		<script src="angular/js/controllers.js"></script>
+		<script src="js/ui-bootstrap-tpls-1.1.1.min.js"></script> -->
+		<title>SimplyPlayCast!</title>
+	</head>
+	<body>
+
+		<nav class="navba navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a href="#" class="navbar-brand">SimplyCast</a>
+				</div>
+				<ul class="nav navbar-nav">
+					<!-- change class to "dropdown open" for having expanded enu by default-->
+					<li class="active dropdown" id="expandMenu">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+						area-haspop="false" area-expanded="false">CRM
+						<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Dashboard</li></a>
+							<li><a href="#">Contacts</li></a>
+							<li><a href="#">Leads</li></a>
+							<li><a href="#" id="activeList">List</li></a>
+							<li><a href="#">Tasks</li></a>
+							<li><a href="#">Search</li></a>
+							<li><a href="#">Pipelines</li></a>
+							<li><a href="#">Audiences</li></a><br>
+							<li><a href="#">(X) Remove</li></a>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+						area-haspop="true" area-expanded="false">Email
+						<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Dashboard</li></a>
+							<li><a href="#">New Project</li></a>
+							<li><a href="#">Management</li></a>
+							<li><a href="#">Reports</li></a>
+							<li><a href="#">Suppression</li></a>
+							<li><a href="#">Authentication</li></a><br>
+							<li><a href="#">(X) Remove</li></a>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="row">
+	        <div class="col-md-3">
+	            <div class="sidebar-nav-fixed affix">
+	                <div class="sidebar">
+	                    <ul class="list-group">
+	                        <li class="list-group-item"><a href="#"> Dashboard</a></li>
+	                        <li class="list-group-item" id="contacts"><a href="#"> Contacts</a></li>
+	                        <li class="list-group-item"><a href="#"> Leads</a></li>
+	                        <li class="list-group-item"><a href="#"> Lists</a></li>
+	                        <li class="list-group-item"><a href="#"> Tasks</a></li>
+	                        <li class="list-group-item"><a href="#"> Search Contacts</a></li>
+	                        <li class="list-group-item"><a href="#"> Pipelines</a></li>
+	                        <li class="list-group-item"><a href="#"> Audience Management</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+
+		<div class="modal fade" id="modal-congratulations">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Task 1 </h4>
+                    </div>
+                    <div class="modal-body">
+						<p>
+							<h4>Congratulations</h4>
+							You have completed <br>
+							Level #1: Create a new list
+						</p>
+						<!-- <div class="form-group">
+							<label for="list">Enter new list name:</label>
+							<input type="text" name="list-name" class="form-control"><br>
+						</div> -->
+                    </div>
+					<div class="modal-footer">
+                        <!-- <a class="btn btn-default" href="#modal-new-list"
+						data-toggle="modal" data-dismiss="modal">
+							Back
+						</a> -->
+						<a class="btn btn-sm btn-success" href="#modal-choose-level"
+						data-toggle="modal" data-dismiss="modal">
+                            <span class="glyphicon glyphicon-menu-right" area-hidden="true">
+								Next
+							</span>
+                        </a>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+		<div class="modal fade" id="modal-choose-level">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Task 1 </h4>
+                    </div>
+                    <div class="modal-body">
+						<p>
+							By creating the list <br>
+							<em><b><span id="listName" class="listName"></span></em></b><br>
+							you have added 5 people to the list!<br><br>
+						</p>
+						<p>
+							Do you want to play? <br><br>
+							<a type="button" class="btn btn-sq btn-default" href="#">
+								Level 1<br>Again
+							</a>
+							or
+							<a type="button" class="btn btn-sq btn-caption btn-primary"  href="#">
+								<span class="button-caption">Next Level</span>
+							</a> <br><br>
+							<a type="button" class="btn btn-sq btn-caption btn-danger"  href="#">
+								<span class="button-caption">Quit</span>
+							</a>
+						</p>
+                    </div>
+					<!-- <div class="modal-footer">
+						<a class="btn btn-sm btn-success" href="dashboard.html">
+                            <span class="glyphicon glyphicon-menu-right" area-hidden="true">Next</span>
+                        </a>
+                    </div> -->
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+
+
+
+
+	</body>
+</html>
