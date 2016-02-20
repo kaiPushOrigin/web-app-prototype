@@ -12,6 +12,12 @@
     color: #FFF;
 }
 
+.main-btn:hover {
+    text-decoration: none;
+    color: #FFF;
+    cursor: pointer;
+}
+
 .modal-body {
     font-style: 'Open Sans',helvetica,verdana,arial,sans-serif;
     font-size: 16px;
