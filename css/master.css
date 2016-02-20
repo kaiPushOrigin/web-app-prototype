@@ -118,8 +118,10 @@ table {
 .user-info-pic {
     font-size: 50px;
     /*padding: 30px;*/
+    padding-left: 30px;
     text-align: left;
-    padding-right: 20px;
+    padding-right: 70px;
+    top: -50px;
 }
 
 .li-brand {
@@ -127,8 +129,29 @@ table {
     font-weight: bold;
 }
 
-.user-info {
+.contact-info-table {
+    padding: 20px;
+}
 
+.contact-form {
+    padding-bottom: 10px;
+}
+
+
+.list-table {
+    font-size: 13px;
+}
+
+.contact-hint {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    background-color: #5cb85c;
+    color: #FFF !important;
+}
+
+.modal-header.add-contact {
+    background-color: #5cb85c;
+    color: #FFF !important;
 }
 
 /*.level {

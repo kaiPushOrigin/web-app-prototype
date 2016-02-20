@@ -32,6 +32,22 @@
 		<script src="js/contacts.js"></script>
 		<script src="js/dashboard.js"></script>
 
+		<script>
+		$(window).load(function() {
+			console.log("hi");
+			getListName();
+		});
+		function getListName() {
+			var getList = localStorage.getItem("list");
+			var contactList = JSON.parse(getList);
+			console.log(contactList.listName);
+
+			document.getElementById("listID").innerHTML = contactList.listID;
+			document.getElementById("listName").innerHTML = contactList.listName;
+			document.getElementById("listContacts").innerHTML = contactList.listContacts;
+		}
+		</script>
+
 		<!-- Angular UI Bootstrap -->
 		<!-- <script src="angular/js/app.js"></script>
 		<script src="angular/js/controllers.js"></script>
@@ -136,12 +152,12 @@
 		                    </ul>
 		                </div>
 						<ul class="list-group">
-							<li class="list-group-item li-brand">
-								<a href="#"> NEW CONTACT HINT</a>
+							<li class="list-group-item li-brand contact-hint">
+								NEW CONTACT HINT
 							</li>
 							<li class="list-group-item parentList">
 								<!-- <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> -->
-								<table>
+								<table class="new-contact-sidebar">
 									<tr>
 										<td><em>Name: </em></td>
 										<td class="table-value">Josh Redman</td>
@@ -178,7 +194,10 @@
             <div class="modal-dialog modal-sm">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <button type="button" class="close" data-dismiss="modal">
+							<span aria-hidden="true">&times;</span>
+							<span class="sr-only">Close</span>
+						</button>
                         <h4 class="modal-title">Now add the following contact </h4>
                     </div>
                     <div class="modal-body">
@@ -224,8 +243,15 @@
 						</div> -->
                     </div>
 					<div class="modal-footer">
-                        <a class="btn btn-default" href="#modal-new-list" data-toggle="modal" data-dismiss="modal">Back</a>
-                        <a type="button" href="#modal-list-contacts" data-toggle="modal" class="btn btn-primary ok" data-dismiss="modal">OK</a>
+                        <a class="btn btn-default" href="#modal-new-list"
+						data-toggle="modal" data-dismiss="modal">
+							Back
+						</a>
+                        <a type="button" href="#modal-list-contacts"
+						data-toggle="modal" class="btn btn-primary ok"
+						data-dismiss="modal">
+							OK
+						</a>
                     </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
@@ -234,50 +260,94 @@
 		<div class="modal fade" id="modal-list-contacts">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <!-- <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title">New List</h4>
-                    </div> -->
-                    <div class="modal-body-user">
-						<table>
-							<tr>
-								<td rowspan="6">
-									<span class="glyphicon glyphicon-user user-info-pic"></span>
-								</td>
-								<td>Josh Redman</td>
-							</tr>
-							<tr>
-								<td>ABC Insurance</td>
-							</tr>
-							<tr>
-								<td>CEO</td>
-							</tr>
-							<tr>
-								<td>1230 12th Street</td>
-							</tr>
-							<tr>
-								<td>Philadelphia, PA</td>
-							</tr>
-							<tr>
-								<td>195016</td>
-							</tr>
-						</table>
-						<!-- <span class="glyphicon glyphicon-user user-info-pic"></span>
-						<p class="user-info">
-							sdsdsd <br>
-							sdsdsd <br>
-							sdsdsd <br>
-							sdsdsd <br>
-						</p> -->
-						<!-- <div class="form-group">
-							<label for="list">Enter new list name:</label>
-							<input type="text" name="list-name" class="form-control"><br>
-						</div> -->
-                    </div>
-					<div class="modal-footer">
-                        <a class="btn btn-default" href="#modal-new-list" data-toggle="modal" data-dismiss="modal">Back</a>
-                        <a type="button" onlclick="getListName()" href="new-list.html" class="btn btn-primary ok">OK</a>
-                    </div>
+					<!-- <form data-toggle="validator" role="form">
+					  <div class="form-group">
+					    <label for="inputName" class="control-label">Name</label>
+					    <input type="text" class="form-control" id="inputName" placeholder="Cina Saffary" required>
+					  </div>
+
+					  <div class="form-group">
+					    <a type="button" class="btn btn-primary">Submit</button>
+					  </div>
+					</form> -->
+					<form data-toggle="validator" role="form">
+	                    <div class="modal-header add-contact">
+	                        <button type="button" class="close" data-dismiss="modal">
+								<span aria-hidden="true">&times;</span>
+								<span class="sr-only">Close</span>
+							</button>
+	                        <h4 class="modal-title">Josh Redman</h4>
+	                    </div>
+	                    <div class="modal-body-user">
+							<table class="contact-info-table">
+
+									<tr>
+										<td rowspan="6">
+											<span class="glyphicon glyphicon-user user-info-pic"></span>
+										</td>
+										<td class="contact-form"><input type="text"
+											class="form-control" placeholder="Company"
+											aria-describedby="basic-addon1" required></td>
+									</tr>
+									<tr>
+										<td class="contact-form"><input type="text"
+											class="form-control" placeholder="Title"
+											aria-describedby="basic-addon1" required></td>
+									</tr>
+									<tr>
+										<td class="contact-form"><input type="text"
+											class="form-control" placeholder="Address"
+											aria-describedby="basic-addon1" required></td>
+									</tr>
+									<tr>
+										<td class="contact-form"><input type="text"
+											class="form-control" placeholder="City/State"
+											aria-describedby="basic-addon1" required></td>
+									</tr>
+									<tr>
+										<td class="contact-form"><input type="text"
+											class="form-control" placeholder="Zip"
+											aria-describedby="basic-addon1" required></td>
+									</tr>
+							</table>
+							<br>
+							<ul class="nav nav-tabs">
+							    <li><a href="#">Timeline</a></li>
+							    <li><a href="#">Details</a></li>
+							    <li class="active"><a href="#">Lists</a></li>
+							    <li><a href="#">360</a></li>
+								<li><a href="#">Pipeline</a></li>
+	  						</ul>
+							<table class="table table-bordered list-table">
+							    <thead>
+							      <tr>
+							        <td></td>
+							        <td>ID</td>
+							        <td>Name</td>
+									<td>Contacts</td>
+							      </tr>
+							    </thead>
+							    <tbody>
+							      <tr>
+							        <td><input type="checkbox" value="" checked></td>
+							        <td id="listID"></td>
+							        <td id="listName"></td>
+									<td id="listContacts"></td>
+							      </tr>
+							    </tbody>
+							  </table>
+	                    </div> <!--modal-body-->
+						<div class="modal-footer">
+	                        <a class="btn btn-default" href="#modal-new-list"
+							data-toggle="modal" data-dismiss="modal">
+								Back
+							</a>
+	                        <button type="submit" onlclick="getListName()" href="new-list.html"
+							class="btn btn-primary ok">
+								Add
+							</button>
+	                    </div>
+					</form>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
