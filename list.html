@@ -36,8 +36,51 @@
 		<script src="angular/js/controllers.js"></script>
 		<script src="js/ui-bootstrap-tpls-1.1.1.min.js"></script> -->
 		<title>SimplyPlayCast!</title>
+		<style media="screen">
+
+
+			/*.content-center > .panel > .panel-body {
+				background-color: #345;
+				opacity: 1.0;
+			}*/
+			.panel-body {
+				opacity: 1.0 !important;
+			}
+
+			.navbar-inverse, .row, .btn-upload, .table {
+				opacity: 0.3;
+			}
+
+			.btn-highlight {
+				color: #fff;
+			    background-color: #337ab7;
+			}
+
+			.btn.btn-highlight:hover {
+				color: #fff;
+			    background-color: #5cb85c;
+			}
+
+
+
+
+			/*.btn.btn-default.active-button.btn-highlight {
+				opacity: 1.0 !important;
+				z-index: 3;
+			}*/
+
+		</style>
+
+
+
+
+
+
+
+
 	</head>
 	<body>
+
 
 		<nav class="navba navbar-inverse">
 			<div class="container-fluid">
@@ -144,6 +187,7 @@
 				<span class="glyphicon glyphicon glyphicon-download" area-hidden="true">Previous</span>
 			</a>
 		</p> -->
+
 		<div class="content-center">
 			<div class="panel panel-default">
   				<div class="panel-heading">
@@ -151,11 +195,11 @@
   				</div>
   				<div class="panel-body">
 					<div class="btn-group" role="group" aria-label="...">
-						<button type="button" class="btn btn-default active-button" href="#modal-new-list" data-toggle="modal">
+						<button type="button" class="btn btn-highlight" href="#modal-new-list" data-toggle="modal">
 							<span class="glyphicon glyphicon glyphicon-plus" area-hidden="true"> New
 							</span>
 						</button>
-						<button type="button" class="btn btn-default">
+						<button type="button" class="btn btn-default btn-upload">
 							<span class="glyphicon glyphicon glyphicon-download" area-hidden="true"> Upload
 							</span>
 						</button><br>
@@ -181,6 +225,7 @@
   				</div>
 			</div>
 		</div>
+
 
 		<div class="modal fade" id="modal-new-list">
             <div class="modal-dialog modal-sm">
