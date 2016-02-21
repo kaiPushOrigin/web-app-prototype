@@ -30,59 +30,17 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
 		<script src="js/dashboard.js"></script>
+		<script src="js/fade.js"></script>
 
 		<!-- Angular UI Bootstrap -->
 		<!-- <script src="angular/js/app.js"></script>
 		<script src="angular/js/controllers.js"></script>
 		<script src="js/ui-bootstrap-tpls-1.1.1.min.js"></script> -->
 		<title>SimplyPlayCast!</title>
-		<style media="screen">
-
-
-			/*.content-center > .panel > .panel-body {
-				background-color: #345;
-				opacity: 1.0;
-			}*/
-			.panel-body {
-				opacity: 1.0 !important;
-			}
-
-			.navbar-inverse, .row, .btn-upload, .table {
-				opacity: 0.3;
-			}
-
-			.btn-highlight {
-				color: #fff;
-			    background-color: #337ab7;
-			}
-
-			.btn.btn-highlight:hover {
-				color: #fff;
-			    background-color: #5cb85c;
-			}
-
-
-
-
-			/*.btn.btn-default.active-button.btn-highlight {
-				opacity: 1.0 !important;
-				z-index: 3;
-			}*/
-
-		</style>
-
-
-
-
-
-
-
 
 	</head>
 	<body>
-
-
-		<nav class="navba navbar-inverse">
+		<nav class="navbar-inverse" id="nav">
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<a href="#" class="navbar-brand">SimplyCast</a>
@@ -125,19 +83,19 @@
 			</div>
 		</nav>
 
-		<div class="row">
+		<div class="row" id="left-row">
 	        <div class="col-md-3">
 	            <div class="sidebar-nav-fixed affix">
 	                <div class="sidebar">
 	                    <ul class="list-group">
-	                        <li class="list-group-item"><a href="#"> Dashboard</a></li>
+	                        <li class="list-group-item" id="dashboard"><a href="#"> Dashboard</a></li>
 	                        <li class="list-group-item" id="contacts"><a href="contacts.html"> Contacts</a></li>
-	                        <li class="list-group-item"><a href="#"> Leads</a></li>
-	                        <li class="list-group-item"><a href="#"> Lists</a></li>
-	                        <li class="list-group-item"><a href="#"> Tasks</a></li>
-	                        <li class="list-group-item"><a href="#"> Search Contacts</a></li>
-	                        <li class="list-group-item"><a href="#"> Pipelines</a></li>
-	                        <li class="list-group-item"><a href="#"> Audience Management</a></li>
+	                        <li class="list-group-item" id="leads"><a href="#"> Leads</a></li>
+	                        <li class="list-group-item" id="lists"><a href="#"> Lists</a></li>
+	                        <li class="list-group-item" id="tasks"><a href="#"> Tasks</a></li>
+	                        <li class="list-group-item" id="searchContacts"><a href="#"> Search Contacts</a></li>
+	                        <li class="list-group-item" id="pipelines"><a href="#"> Pipelines</a></li>
+	                        <li class="list-group-item" id="audManagement"><a href="#"> Audience Management</a></li>
 	                    </ul>
 	                </div>
 	            </div>
@@ -145,7 +103,7 @@
 	    </div>
 
 		<div class="container-fluid">
-			<div class="row">
+			<div class="row" id="right-row">
 		        <div class="col-md-3 sidebar-right">
 		            <div class="sidebar-right affix">
 		            	<div class="sidebar">
@@ -195,16 +153,16 @@
   				</div>
   				<div class="panel-body">
 					<div class="btn-group" role="group" aria-label="...">
-						<button type="button" class="btn btn-highlight" href="#modal-new-list" data-toggle="modal">
+						<button type="button" onclick="removeStyles()" class="btn btn-highlight" href="#modal-new-list" data-toggle="modal">
 							<span class="glyphicon glyphicon glyphicon-plus" area-hidden="true"> New
 							</span>
 						</button>
-						<button type="button" class="btn btn-default btn-upload">
+						<button type="button" class="btn btn-default btn-upload" id="upload">
 							<span class="glyphicon glyphicon glyphicon-download" area-hidden="true"> Upload
 							</span>
 						</button><br>
 					</div>
-					<table class="table table-bordered">
+					<table class="table table-bordered" id="panel-table">
 					    <thead>
 					      <tr>
 					        <th></th>
@@ -269,7 +227,7 @@
                     </div>
 					<div class="modal-footer">
                         <a class="btn btn-default" href="#modal-new-list" data-toggle="modal" data-dismiss="modal">Back</a>
-                        <a type="button" href="contacts.html" class="btn btn-primary ok" data-dismiss="modal">OK</a>
+                        <a type="button" href="contacts.html" onclick="dimBackground()" class="btn btn-primary ok" data-dismiss="modal">OK</a>
                     </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->

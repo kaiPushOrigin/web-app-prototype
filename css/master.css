@@ -106,8 +106,12 @@
 
 .contacts-green {
     background-color: #5cb85c;
-    color: white !important;
+    opacity: 1.0;
 }
+
+/*a > .list-group > .list-group-item > .contacts-green {
+    color: white !important;
+}*/
 
 .contact-info > .label{
     font-size: 15px;
@@ -164,11 +168,31 @@ table {
   width: 120px !important;
   height: 60px !important;
   font-size: 15px;
+  border-radius: 25px;
 
 }
 
 .btn-sq.btn-caption {
     padding-top: 15px;
+}
+
+
+.panel-body {
+    opacity: 1.0 !important;
+}
+
+#nav, #left-row, #upload, #panel-table {
+    opacity: 0.3;
+}
+
+.btn-highlight {
+    color: #fff;
+    background-color: #337ab7;
+}
+
+.btn.btn-highlight:hover {
+    color: #fff;
+    background-color: #5cb85c;
 }
 
 /*.level {

@@ -19,6 +19,9 @@
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
+		<!--font-awesome-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
 
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -44,6 +47,42 @@
 			document.getElementById("listName").innerHTML = contactList.listName;
 		}
 		</script>
+		<style media="screen">
+			.level-brand {
+				font-size: 25px;
+				font-family: Verdana, Geneva, sans-serif;
+			}
+			.modal-body.levels {
+				text-align: left;
+				font-size: 20px;
+			}
+
+			.btn > h4 {
+				font-weight: normal;
+				padding-bottom: 20px;
+			}
+
+			.btn-sq-level {
+			  width: 220px !important;
+			  border-radius: 25px;
+			  height: 160px !important;
+			  font-size: 15px;
+			  margin: 30px;
+			}
+
+			.fa.fa-star.fa-star-complete {
+				/*color: #996515;*/
+				color: #337ab7;
+			}
+
+			.fa.fa-star {
+				color: #ccc;
+			}
+
+			.clock {
+				/*font-style: italic;*/
+			}
+		</style>
 
 		<!-- Angular UI Bootstrap -->
 		<!-- <script src="angular/js/app.js"></script>
@@ -166,10 +205,11 @@
 								Level 1<br>Again
 							</a>
 							or
-							<a type="button" class="btn btn-sq btn-caption btn-primary"  href="#">
+							<a type="button" class="btn btn-sq btn-caption btn-primary"
+							data-toggle="modal" data-dismiss="modal" href="#modal-task-one">
 								<span class="button-caption">Next Level</span>
 							</a> <br><br>
-							<a type="button" class="btn btn-sq btn-caption btn-danger"  href="#">
+							<a type="button" class="btn btn-sq btn-caption btn-danger"  data-dismiss="modal">
 								<span class="button-caption">Quit</span>
 							</a>
 						</p>
@@ -179,6 +219,67 @@
                             <span class="glyphicon glyphicon-menu-right" area-hidden="true">Next</span>
                         </a>
                     </div> -->
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+		<div class="modal fade" id="modal-task-one">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Task #1: Create a list </h4>
+                    </div>
+                    <div class="modal-body levels">
+
+							<a type="button" class="btn btn-sq-level btn-success" href="#">
+								<span class="level-brand">Level 1</span><br>
+								<h4>Create a new list</h4>
+								<i class="fa fa-star fa-star-complete"></i>
+								<i class="fa fa-star fa-star-complete"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+							</a>
+
+							<a type="button" class="btn btn-sq-level btn-default" href="#">
+								<span class="level-brand">Level 2</span><br>
+								<h4>Import a CSV file</h4>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+							</a>
+
+							<a type="button" class="btn btn-sq-level btn-default" href="#">
+								<span class="level-brand">Level 3</span><br>
+								<h4>Edit a list</h4>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+							</a>
+							<br><br>
+
+							<a type="button" class="btn btn-sq-level btn-default" href="#">
+								<span class="level-brand">Level 4</span><br>
+								<h4>Export a List</h4>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+							</a>
+
+						</p>
+                    </div>
+					<div class="modal-footer">
+						<b class="clock">Beat the clock to get more stars! </b>
+						<a class="btn btn-sm btn-primary" href="dashboard.html">
+                            OK
+                        </a>
+                    </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->

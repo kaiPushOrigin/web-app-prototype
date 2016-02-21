@@ -17,8 +17,7 @@ function getList() {
 	document.getElementById('contact-list-name').innerHTML = listName;
 	var contactMenu = document.getElementById("contacts");
 	contactMenu.classList.add("contacts-green");
-
-
+	
 		// Check browser support
 	if (typeof(Storage) !== "undefined") {
 	    // Store
