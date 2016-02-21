@@ -1,0 +1,12 @@
+.fa.fa-clock-o {
+    padding-top: 3px;
+    padding-right: 150px;
+    font-size: 40px;
+    color: #FFF;
+    margin-bottom: -15px;
+}
+
+.navbar-right {
+    padding-top: auto;
+    padding-bottom: -15px;
+}

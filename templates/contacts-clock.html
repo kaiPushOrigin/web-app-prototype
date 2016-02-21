@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"> <!-- unicode character set -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial scale=1.0">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+		<meta name="description" content="Web-App Prototype">
+		<meta name="author" content="kashif">
+
+		<!-- Bootstrap Core CSS -->
+		<!-- <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+
+		<!-- Latest jQuery -->
+		<script type="text/javascript" src="../js/jquery-1.12.0.min.js"></script>
+
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+		<!--font-awesome-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+		<link rel="stylesheet" href="../css/master.css">
+		<link rel="stylesheet" href="../css/clock.css">
+
+		<!-- Google Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
+		<script src="../js/contacts.js"></script>
+		<script src="../js/dashboard.js"></script>
+
+		<script>
+		$(window).load(function() {
+			console.log("hi");
+			getListName();
+		});
+		function getListName() {
+			var getList = localStorage.getItem("list");
+			var contactList = JSON.parse(getList);
+			console.log(contactList.listName);
+
+			document.getElementById("listID").innerHTML = contactList.listID;
+			document.getElementById("listName").innerHTML = contactList.listName;
+			document.getElementById("listContacts").innerHTML = contactList.listContacts;
+		}
+		</script>
+
+		<!-- Angular UI Bootstrap -->
+		<!-- <script src="angular/js/app.js"></script>
+		<script src="angular/js/controllers.js"></script>
+		<script src="js/ui-bootstrap-tpls-1.1.1.min.js"></script> -->
+		<title>SimplyPlayCast!</title>
+	</head>
+	<body>
+
+		<nav class="navba navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a href="#" class="navbar-brand">SimplyCast</a>
+				</div>
+				<ul class="nav navbar-nav">
+					<!-- change class to "dropdown open" for having expanded enu by default-->
+					<li class="active dropdown" id="expandMenu">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+						area-haspop="false" area-expanded="false">CRM
+						<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Dashboard</li></a>
+							<li><a href="#">Contacts</li></a>
+							<li><a href="#">Leads</li></a>
+							<li><a href="#" id="activeList">List</li></a>
+							<li><a href="#">Tasks</li></a>
+							<li><a href="#">Search</li></a>
+							<li><a href="#">Pipelines</li></a>
+							<li><a href="#">Audiences</li></a><br>
+							<li><a href="#">(X) Remove</li></a>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+						area-haspop="true" area-expanded="false">Email
+						<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Dashboard</li></a>
+							<li><a href="#">New Project</li></a>
+							<li><a href="#">Management</li></a>
+							<li><a href="#">Reports</li></a>
+							<li><a href="#">Suppression</li></a>
+							<li><a href="#">Authentication</li></a><br>
+							<li><a href="#">(X) Remove</li></a>
+						</ul>
+					</li>
+				</ul>
+				<ul class="navbar-right">
+					<i class="fa fa-clock-o"> 2:35</i>
+				</ul>c
+			</div>
+		</nav>
+
+		<div class="row">
+	        <div class="col-md-3">
+	            <div class="sidebar-nav-fixed affix">
+	                <div class="sidebar">
+	                    <ul class="list-group">
+	                        <li class="list-group-item"><a href="#"> Dashboard</a></li>
+	                        <li class="list-group-item" id="contacts"><a href="#"> Contacts</a></li>
+	                        <li class="list-group-item"><a href="#"> Leads</a></li>
+	                        <li class="list-group-item"><a href="#"> Lists</a></li>
+	                        <li class="list-group-item"><a href="#"> Tasks</a></li>
+	                        <li class="list-group-item"><a href="#"> Search Contacts</a></li>
+	                        <li class="list-group-item"><a href="#"> Pipelines</a></li>
+	                        <li class="list-group-item"><a href="#"> Audience Management</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+
+		<div class="container-fluid">
+			<div class="row">
+		        <div class="col-md-3 sidebar-right">
+		            <div class="sidebar-right affix">
+		            	<div class="sidebar">
+		                    <ul class="list-group">
+		                        <li class="list-group-item li-brand">
+									<a href="#"> TASK VIEW</a>
+								</li>
+	                        	<li class="list-group-item parentList">
+	                        		<!-- <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> -->
+									Task 1: Create a contact list
+								</li>
+	                        	<li class="subList list-group-item active">
+									<span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span>
+									Level 1: Manually create a list</li>
+	                        	<li class="subList list-group-item">Level 2: Upload and import from a CSV file</li>
+								<li class="subList list-group-item">Level 3: Edit existing lists</li>
+
+		                        <li class="list-group-item parentList">
+									Create email project
+		                        </li>
+								<li class="subList list-group-item">
+									Level 1: Create a new email from templates</li>
+								<li class="subList list-group-item">
+									Level 2: Use advanced editors</li>
+								<li class="subList list-group-item">Level 3: Create email templates</li>
+
+								<li class="list-group-item parentList">
+									Review
+		                        </li>
+		                    </ul>
+		                </div>
+						<ul class="list-group">
+							<li class="list-group-item li-brand contact-hint">
+								NEW CONTACT HINT
+							</li>
+							<li class="list-group-item parentList">
+								<!-- <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> -->
+								<table class="new-contact-sidebar">
+									<tr>
+										<td><em>Name: </em></td>
+										<td class="table-value">Josh Redman</td>
+									</tr>
+									<tr>
+										<td><em>Company: </em></td>
+										<td class="table-value">ABC Insurance</td>
+									</tr>
+									<tr>
+										<td><em>Title: </em></td>
+										<td class="table-value">CEO</td>
+									</tr>
+									<tr>
+										<td><em>Address: </em></td>
+										<td class="table-value">1230 12th Street</td>
+									</tr>
+									<tr>
+										<td><em>City/State: </em></td>
+										<td class="table-value">Philadelphia, PA</td>
+									</tr>
+									<tr>
+										<td><em>Zip: </em></td>
+										<td class="table-value">195016</td>
+									</tr>
+								</table>
+							</li>
+						</ul>
+		            </div>
+		        </div>
+		    </div> <!-- row -->
+		</div> <!--container-fluid -->
+
+		<div class="modal fade" id="modal-contacts-entry">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+							<span aria-hidden="true">&times;</span>
+							<span class="sr-only">Close</span>
+						</button>
+                        <h4 class="modal-title">Now add the following contact </h4>
+                    </div>
+                    <div class="modal-body">
+						<p align="left" class="contact-info">
+							<table>
+								<tr>
+									<td><em>Name: </em></td>
+									<td class="table-value">Josh Redman</td>
+								</tr>
+								<tr>
+									<td><em>Company: </em></td>
+									<td class="table-value">ABC Insurance</td>
+								</tr>
+								<tr>
+									<td><em>Title: </em></td>
+									<td class="table-value">CEO</td>
+								</tr>
+								<tr>
+									<td><em>Address: </em></td>
+									<td class="table-value">1230 12th Street</td>
+								</tr>
+								<tr>
+									<td><em>City/State: </em></td>
+									<td class="table-value">Philadelphia, PA</td>
+								</tr>
+								<tr>
+									<td><em>Zip: </em></td>
+									<td class="table-value">195016</td>
+								</tr>
+							</table>
+							 <!-- <span class="label label-success">Name:</span> Josh Redman<br><br>
+							 <span class="label label-success">Company:</span> ABC Insurance<br><br>
+							 <span class="label label-success">Title:</span> CEO<br><br>
+							 <span class="label label-success">Address:</span> 1230 12th Street<br><br>
+							 <span class="label label-success">City/State:</span> Philadelphia, PA<br><br>
+							 <span class="label label-success">Zip:</span> 195016<br><br> -->
+							<div id="contact-list-name">
+							</div>
+						</p>
+						<!-- <div class="form-group">
+							<label for="list">Enter new list name:</label>
+							<input type="text" name="list-name" class="form-control"><br>
+						</div> -->
+                    </div>
+					<div class="modal-footer">
+                        <a class="btn btn-default" href="#modal-new-list"
+						data-toggle="modal" data-dismiss="modal">
+							Back
+						</a>
+                        <a type="button" href="#modal-list-contacts"
+						data-toggle="modal" class="btn btn-primary ok"
+						data-dismiss="modal">
+							OK
+						</a>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+		<div class="modal fade" id="modal-list-contacts">
+            <div class="modal-dialog">
+                <div class="modal-content">
+					<!-- <form data-toggle="validator" role="form">
+					  <div class="form-group">
+					    <label for="inputName" class="control-label">Name</label>
+					    <input type="text" class="form-control" id="inputName" placeholder="Cina Saffary" required>
+					  </div>
+
+					  <div class="form-group">
+					    <a type="button" class="btn btn-primary">Submit</button>
+					  </div>
+					</form> -->
+					<form data-toggle="validator" role="form">
+	                    <div class="modal-header add-contact">
+	                        <button type="button" class="close" data-dismiss="modal">
+								<span aria-hidden="true">&times;</span>
+								<span class="sr-only">Close</span>
+							</button>
+	                        <h4 class="modal-title">Josh Redman</h4>
+	                    </div>
+	                    <div class="modal-body-user">
+							<table class="contact-info-table">
+
+									<tr>
+										<td rowspan="6">
+											<span class="glyphicon glyphicon-user user-info-pic"></span>
+										</td>
+										<td class="contact-form"><input type="text"
+											class="form-control" placeholder="Company"
+											aria-describedby="basic-addon1" required></td>
+									</tr>
+									<tr>
+										<td class="contact-form"><input type="text"
+											class="form-control" placeholder="Title"
+											aria-describedby="basic-addon1" required></td>
+									</tr>
+									<tr>
+										<td class="contact-form"><input type="text"
+											class="form-control" placeholder="Address"
+											aria-describedby="basic-addon1" required></td>
+									</tr>
+									<tr>
+										<td class="contact-form"><input type="text"
+											class="form-control" placeholder="City/State"
+											aria-describedby="basic-addon1" required></td>
+									</tr>
+									<tr>
+										<td class="contact-form"><input type="text"
+											class="form-control" placeholder="Zip"
+											aria-describedby="basic-addon1" required></td>
+									</tr>
+							</table>
+							<br>
+							<ul class="nav nav-tabs">
+							    <li><a href="#">Timeline</a></li>
+							    <li><a href="#">Details</a></li>
+							    <li class="active"><a href="#">Lists</a></li>
+							    <li><a href="#">360</a></li>
+								<li><a href="#">Pipeline</a></li>
+	  						</ul>
+							<table class="table table-bordered list-table">
+							    <thead>
+							      <tr>
+							        <td></td>
+							        <td>ID</td>
+							        <td>Name</td>
+									<td>Contacts</td>
+							      </tr>
+							    </thead>
+							    <tbody>
+							      <tr>
+							        <td><input type="checkbox" value="" checked></td>
+							        <td id="listID"></td>
+							        <td id="listName"></td>
+									<td id="listContacts"></td>
+							      </tr>
+							    </tbody>
+							  </table>
+	                    </div> <!--modal-body-->
+						<div class="modal-footer">
+	                        <a class="btn btn-default" href="#modal-new-list"
+							data-toggle="modal" data-dismiss="modal">
+								Back
+							</a>
+	                        <a href="level-complete.html" type="button" onclick="getListName()"
+							class="btn btn-primary ok">
+								Add
+							</a>
+	                    </div>
+					</form>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+
+
+	</body>
+</html>
