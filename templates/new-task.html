@@ -34,17 +34,16 @@
 
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
-		<script src="../js/dashboard.js"></script>
+		<!-- <script src="../js/dashboard.js"></script> -->
 		<!-- <script src="js/fade.js"></script> -->
-
 		<style media="screen">
-		#left-row, #upload, #panel-table {
-			opacity: 0.3;
-		}
+			#left-row {
+				opacity: 1.0;
+			}
 
-		#nav {
-			opacity: 1.0;
-		}
+			#nav {
+				opacity: 1.0;
+			}
 		</style>
 		<!-- Angular UI Bootstrap -->
 		<!-- <script src="angular/js/app.js"></script>
@@ -95,7 +94,7 @@
 					</li>
 				</ul>
 				<ul class="navbar-right">
-					<i class="fa fa-clock-o"> 0:00</i>
+					<i class="fa fa-clock-o"> 4:57</i>
 				</ul>
 			</div>
 		</nav>
@@ -132,16 +131,18 @@
 	                        		<!-- <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> -->
 									Task 1: Create a contact list
 								</li>
-	                        	<li class="subList list-group-item active">
-									<span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span>
-									Level 1: Manually create a list</li>
-	                        	<li class="subList list-group-item">Level 2: Upload and import from a CSV file</li>
-								<li class="subList list-group-item">Level 3: Edit existing lists</li>
+	                        	<li class="subList list-group-item">
+									<i class="fa fa-check-square-o"></i> Level 1: Manually create a list</li>
+	                        	<li class="subList list-group-item">
+									<i class="fa fa-check-square-o"></i> Level 2: Upload and import from a CSV file</li>
+								<li class="subList list-group-item">
+									<i class="fa fa-check-square-o"></i> Level 3: Edit existing lists</li>
 
 		                        <li class="list-group-item parentList">
 									Create email project
 		                        </li>
-								<li class="subList list-group-item">
+								<li class="subList list-group-item active">
+									<span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span>
 									Level 1: Create a new email from templates</li>
 								<li class="subList list-group-item">
 									Level 2: Use advanced editors</li>
@@ -162,46 +163,6 @@
 				<span class="glyphicon glyphicon glyphicon-download" area-hidden="true">Previous</span>
 			</a>
 		</p> -->
-
-		<div class="content-center">
-			<div class="panel panel-default">
-  				<div class="panel-heading">
-    				<h3 class="panel-title">List</h3>
-  				</div>
-  				<div class="panel-body">
-					<div class="btn-group" role="group" aria-label="...">
-						<button type="button" onclick="removeStyles()" class="btn btn-highlight" href="#modal-new-list" data-toggle="modal">
-							<span class="glyphicon glyphicon glyphicon-plus" area-hidden="true"> New
-							</span>
-						</button>
-						<button type="button" class="btn btn-default btn-upload" id="upload">
-							<span class="glyphicon glyphicon glyphicon-download" area-hidden="true"> Upload
-							</span>
-						</button><br>
-					</div>
-					<table class="table table-bordered" id="panel-table">
-					    <thead>
-					      <tr>
-					        <th></th>
-					        <th>ID</th>
-					        <th>Name</th>
-							<th>Contacts</th>
-					      </tr>
-					    </thead>
-					    <tbody>
-					      <tr>
-					        <td><input type="checkbox" value=""></td>
-					        <td></td>
-					        <td></td>
-							<td></td>
-					      </tr>
-					    </tbody>
-					  </table>
-  				</div>
-			</div>
-		</div>
-
-
 		<div class="modal fade" id="modal-new-list">
             <div class="modal-dialog modal-sm">
                 <div class="modal-content">
